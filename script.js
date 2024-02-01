@@ -1,61 +1,62 @@
 // selection/créer élements necessaires
-const phrase = document.querySelector(".texte")
+chrEspace = "‎ "
+const phrase = document.querySelector(".container-texte")
 const liste = [
-    "WE ARE CREATING LUXURY.",
-    "WE DEFINE ELEGANCE.",
-    "WE SHAPE EXCLUSIVITY.",
-    "WE DESIGN TIMELESS PRODUCTS.",
-    "WE INNOVATE WITH STYLE.",
-    "WE CRAFT LUXURIOUS DREAMS.",
-    "WE EMBODY SOPHISTICATION.",
-    "WE BUILD LUXE VISIONS.",
-    "WE LOVE WHAT WE DO.",
-    "WE DESIGN WITH LOVE.",
-    "WE CRAFT ELEGANCE.",
-    "WE LOVE DESIGN.",
-    "WE DESIGN WITH LOVE.",
-    "WE LOVE STYLE.",
-    "WE DESIGN.",
-    "WE CRAFT LOVE.",
-    "WE ARE THE LOVE BEHIND DESIGN.",
-    "WE CRAFT, BUILD, ANTICIPATE.",
-    "WE DESIGN WHILE YOU WAIT.",
-    "WE BUILD, DESIGN, REVEAL NEXT.",
-    "WE ARE LAUNCHING SOON.",
-    "WE EMBRACE BEAUTY.",
-    "WE CHERISH HUMANITY.",
-    "WE HONOR CRAFTSMEN.",
-    "WE REBIRTH.",
-    "WE LOVE ELEGANCE.",
-    "WE CONNECT WITH HUMANITY.",
-    "WE SUPPORT CRAFTSMEN.",
-    "WE CRAFT BEAUTY.",
-    "WE SHAPE ELEGANT OBJECTS.",
-    "WE THINK WITH KINDNESS.",
-    "WE DESIGN BEAUTIFUL THOUGHTS.",
-    "WE CHERISH OBJECTS OF GRACE.",
-    "WE CREATE BEAUTIFUL IDEAS.",
-    "WE FOSTER OBJECTS OF JOY.",
-    "WE NOURISH THOUGHTFUL DESIGN.",
-    "WE SCULPT BEAUTY WITH CARE.",
-    "WE INSPIRE THROUGH OBJECTS.",
-    "WE DESIGN WITH PASSION.",
-    "WE EMBRACE ELEGANCE.",
-    "WE CRAFT DESIRABLE OBJECTS.",
-    "WE DEFINE DESIGN RICH IN REFINEMENT.",
-    "WE LOVE ART.",
-    "WE FUSE PASSION INTO DESIGN.",
-    "WE ELEVATE ELEGANCE.",
-    "WE CREATE IRRESISTIBLE DESIGN.",
-    "WE DESIGN WITH DESIRABILITY.",
-    "WE ARE THE ARCHITECTS OF LUXURY EXPERIENCES.",
-    "WE BUILD INCREDIBLE MOMENTS WITH PASSION.",
-    "WE CRAFT LUXURIOUS JOURNEYS FOR ALL.",
-    "WE DESIGN THE EXTRAORDINARY FOR EVERYONE.",
-    "WE CREATE LUXURY, CURATED BY THE FINEST MINDS.",
-    "WE BUILD BRIDGES TO INCREDIBLE LUXURY.",
-    "WE ARE CREATORS OF EXCEPTIONAL EXPERIENCES.",
-    "WE SHAPE LUXURIOUS DREAMS INTO REALITY."
+    `${chrEspace} ARE CREATING LUXURY.`,
+    `${chrEspace} DEFINE ELEGANCE.`,
+    `${chrEspace} SHAPE EXCLUSIVITY.`,
+    `${chrEspace} DESIGN TIMELESS PRODUCTS.`,
+    `${chrEspace} INNOVATE WITH STYLE.`,
+    `${chrEspace} CRAFT LUXURIOUS DREAMS.`,
+    `${chrEspace} EMBODY SOPHISTICATION.`,
+    `${chrEspace} BUILD LUXE VISIONS.`,
+    `${chrEspace} LOVE WHAT WE DO.`,
+    `${chrEspace} DESIGN WITH LOVE.`,
+    `${chrEspace} CRAFT ELEGANCE.`,
+    `${chrEspace} LOVE DESIGN.`,
+    `${chrEspace} DESIGN WITH LOVE.`,
+    `${chrEspace} LOVE STYLE.`,
+    `${chrEspace} DESIGN.`,
+    `${chrEspace} CRAFT LOVE.`,
+    `${chrEspace} ARE THE LOVE BEHIND DESIGN.`,
+    `${chrEspace} CRAFT, BUILD, ANTICIPATE.`,
+    `${chrEspace} DESIGN WHILE YOU WAIT.`,
+    `${chrEspace} BUILD, DESIGN, REVEAL NEXT.`,
+    `${chrEspace} ARE LAUNCHING SOON.`,
+    `${chrEspace} EMBRACE BEAUTY.`,
+    `${chrEspace} CHERISH HUMANITY.`,
+    `${chrEspace} HONOR CRAFTSMEN.`,
+    `${chrEspace} REBIRTH.`,
+    `${chrEspace} LOVE ELEGANCE.`,
+    `${chrEspace} CONNECT WITH HUMANITY.`,
+    `${chrEspace} SUPPORT CRAFTSMEN.`,
+    `${chrEspace} CRAFT BEAUTY.`,
+    `${chrEspace} SHAPE ELEGANT OBJECTS.`,
+    `${chrEspace} THINK WITH KINDNESS.`,
+    `${chrEspace} DESIGN BEAUTIFUL THOUGHTS.`,
+    `${chrEspace} CHERISH OBJECTS OF GRACE.`,
+    `${chrEspace} CREATE BEAUTIFUL IDEAS.`,
+    `${chrEspace} FOSTER OBJECTS OF JOY.`,
+    `${chrEspace} NOURISH THOUGHTFUL DESIGN.`,
+    `${chrEspace} SCULPT BEAUTY WITH CARE.`,
+    `${chrEspace} INSPIRE THROUGH OBJECTS.`,
+    `${chrEspace} DESIGN WITH PASSION.`,
+    `${chrEspace} EMBRACE ELEGANCE.`,
+    `${chrEspace} CRAFT DESIRABLE OBJECTS.`,
+    `${chrEspace} DEFINE DESIGN RICH IN REFINEMENT.`,
+    `${chrEspace} LOVE ART.`,
+    `${chrEspace} FUSE PASSION INTO DESIGN.`,
+    `${chrEspace} ELEVATE ELEGANCE.`,
+    `${chrEspace} CREATE IRRESISTIBLE DESIGN.`,
+    `${chrEspace} DESIGN WITH DESIRABILITY.`,
+    `${chrEspace} ARE THE ARCHITECTS OF LUXURY EXPERIENCES.`,
+    `${chrEspace} BUILD INCREDIBLE MOMENTS WITH PASSION.`,
+    `${chrEspace} CRAFT LUXURIOUS JOURNEYS FOR ALL.`,
+    `${chrEspace} DESIGN THE EXTRAORDINARY FOR EVERYONE.`,
+    `${chrEspace} CREATE LUXURY, CURATED BY THE FINEST MINDS.`,
+    `${chrEspace} BUILD BRIDGES TO INCREDIBLE LUXURY.`,
+    `${chrEspace} ARE CREATORS OF EXCEPTIONAL EXPERIENCES.`,
+    `${chrEspace} SHAPE LUXURIOUS DREAMS INTO REALITY.`
 ]
 
 //fonction retournant un element d'une liste a partir de son index
@@ -68,15 +69,22 @@ function getLetter(phrase, index) {
     return phrase[index]
 }
 
+//fonction permettant de determiner l'index de la phrase suivante
+function getRandomIndex() {
+    return Math.floor(Math.random() * liste.length)
+}
+
 //fonction ajoutant la lettre au texte de la page
 function addLetter(phraseIndex) {
     let texte = getPhrase(phraseIndex).split("");
+    length = texte.length;
     let i = 0;
 
     let interval = setInterval(() => {
-        if (i < texte.length) {
-            phrase.textContent += texte[i];
-            i++;
+        
+        if (i < length) {
+            phrase.textContent += getLetter(texte, i);
+            i++; // incrémentation de i à chaque itération
         } 
         
         else {
@@ -89,24 +97,35 @@ function addLetter(phraseIndex) {
 //fonction retirant la lettre au texte de la page
 function removeLetter(phraseIndex) {
     let texte = getPhrase(phraseIndex);
-    let i = texte.length
+    let i = texte.length;
     let interval = setInterval(() => {
-        phrase.textContent = ""
-
-        if (i >= texte.length) {
+        if (i > 0) {
             let newTexte = texte.slice(0, -1);
-            texte = newTexte
-            phrase.textContent = newTexte
-            i--
+            phrase.textContent = newTexte;
+            texte = newTexte;
+            i--; // Décrémentation de i à chaque itération
+        } else {
+            clearInterval(interval);
+            changePhrase();
         }
+    }, 100);
+}
 
-        else {
-            clearInterval(interval)
-        }
-    }, 100)
+//fonction permettant de lancer les fonctions addLetter et removeLetter
+function changePhrase() {
+    let phraseIndex = getRandomIndex();
+    if (phrase.textContent.length > 0) {
+        setTimeout(() => {
+            removeLetter(phraseIndex);
+        }, 1000);
+    }
+
+    else {
+        addLetter(phraseIndex);
+    }
 }
 
 //on lance les fonction une fois que les éléments de la page sont chargés
 document.addEventListener("DOMContentLoaded", function () {
-    addLetter(0)
+    changePhrase();
 });

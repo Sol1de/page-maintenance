@@ -83,8 +83,11 @@ function addLetter(phraseIndex) {
     let interval = setInterval(() => {
         
         if (i < length) {
-            phrase.textContent += getLetter(texte, i);
-            i++; // incrémentation de i à chaque itération
+            let letterSpan = document.createElement('span');
+            letterSpan.textContent = getLetter(texte, i);
+            letterSpan.classList.add('appear-animation'); // Ajoutez la classe pour l'animation
+            phrase.appendChild(letterSpan);
+            i++; // Incrémentation de i à chaque itération
         } 
         
         else {
@@ -118,9 +121,7 @@ function changePhrase() {
         setTimeout(() => {
             removeLetter(phraseIndex);
         }, 1000);
-    }
-
-    else {
+    } else {
         addLetter(phraseIndex);
     }
 }

@@ -1,6 +1,7 @@
 // selection/créer élements necessaires
 chrEspace = "‎ "
 const phrase = document.querySelector(".container-texte")
+const cursor = document.querySelector(".cursor")
 const liste = [
     `${chrEspace} ARE CREATING LUXURY.`,
     `${chrEspace} DEFINE ELEGANCE.`,
@@ -85,16 +86,18 @@ function addLetter(phraseIndex) {
         if (i < length) {
             let letterSpan = document.createElement('span');
             letterSpan.textContent = getLetter(texte, i);
-            letterSpan.classList.add('appear-animation'); // Ajoutez la classe pour l'animation
+            letterSpan.classList.add('appear-animation');
             phrase.appendChild(letterSpan);
             i++; // Incrémentation de i à chaque itération
         } 
         
         else {
             clearInterval(interval);
+            cursor.classList.add('animation-blink');
+
             setTimeout(() => {
                 removeLetter(phraseIndex);
-            }, 1000);
+            }, 2000);
         }
     }, 100);
 }
@@ -103,6 +106,8 @@ function addLetter(phraseIndex) {
 function removeLetter(phraseIndex) {
     let texte = getPhrase(phraseIndex);
     let i = texte.length;
+    cursor.classList.remove('animation-blink');
+
     let interval = setInterval(() => {
         if (i > 0) {
             let newTexte = texte.slice(0, -1);

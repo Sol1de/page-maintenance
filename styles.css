@@ -25,10 +25,13 @@ main {
 
 .container-we {
     font-weight: 200;
+    text-align: center;
+    margin-right: 10px;
 }
 
 .container-texte {
     font-weight: 200;
+    text-align: center;
 }
 
 .cursor {
@@ -78,4 +81,23 @@ main {
 @keyframes Appear {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@media screen and (max-width: 768px){
+    main {
+        padding-inline: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-we {
+        margin-right: 0px;
+    }
+
+    .cursor  {
+        display: none;
+    }
 }

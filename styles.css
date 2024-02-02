@@ -23,7 +23,8 @@ main {
 
 .agence {
     display: flex;
-    margin-bottom: 10%;
+    position: absolute;
+    top: 20%;
 }
 
 .agence-title {

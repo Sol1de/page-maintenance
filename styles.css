@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
+.type--B{
+    --line_color : #1b1919 ;
+    --back_color : #E9ECFF
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -16,11 +21,23 @@ main {
     align-items: center;
 }
 
+.agence {
+    display: flex;
+    margin-bottom: 10%;
+}
+
+.agence-title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 20px;
+}
+
 .container {
     height: fit-content;
     display: flex;
     align-items: center;
     color: #495057;
+    font-size: 30px;
 }
 
 .container-we {
@@ -39,13 +56,13 @@ main {
     align-items: center;
     justify-content: center;
     width: 1px;
-    height: 27px;
-    border-top: 1px solid #ADB5BD;
-    border-bottom: 1px solid #ADB5BD;
+    height: 54px;
+    border-top: 2px solid #ADB5BD;
+    border-bottom: 2px solid #ADB5BD;
     color: #ADB5BD;
-    padding-inline: 5px;
+    padding-inline: 10px;
     opacity: 1;
-    font-size: 30px;
+    font-size: 60px;
     font-weight: 200;
 }
 
@@ -54,9 +71,10 @@ main {
     border: none;
     cursor: pointer;
     color: #ADB5BD;
-    font-size: 14px;
+    font-size: 16px;
     transition: all 0.5s ease;
     border-bottom: 1px solid #adb5bd00;
+    margin-top: 20px;
 }
 
 .contact:hover {

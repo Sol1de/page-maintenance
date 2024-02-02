@@ -1,5 +1,4 @@
 // selection/créer élements necessaires
-chrEspace = "‎ "
 const phrase = document.querySelector(".container-texte")
 const cursor = document.querySelector(".cursor")
 const liste = [
@@ -44,19 +43,12 @@ const liste = [
     `DESIGN WITH PASSION.`,
     `EMBRACE ELEGANCE.`,
     `CRAFT DESIRABLE OBJECTS.`,
-    `DEFINE DESIGN RICH IN REFINEMENT.`,
     `LOVE ART.`,
     `FUSE PASSION INTO DESIGN.`,
     `ELEVATE ELEGANCE.`,
     `CREATE IRRESISTIBLE DESIGN.`,
     `DESIGN WITH DESIRABILITY.`,
-    `ARE THE ARCHITECTS OF LUXURY EXPERIENCES.`,
-    `BUILD INCREDIBLE MOMENTS WITH PASSION.`,
     `CRAFT LUXURIOUS JOURNEYS FOR ALL.`,
-    `DESIGN THE EXTRAORDINARY FOR EVERYONE.`,
-    `CREATE LUXURY, CURATED BY THE FINEST MINDS.`,
-    `BUILD BRIDGES TO INCREDIBLE LUXURY.`,
-    `ARE CREATORS OF EXCEPTIONAL EXPERIENCES.`,
     `SHAPE LUXURIOUS DREAMS INTO REALITY.`
 ]
 
@@ -99,7 +91,7 @@ function addLetter(phraseIndex) {
                 removeLetter(phraseIndex);
             }, 2000);
         }
-    }, 100);
+    }, 85);
 }
 
 //fonction retirant la lettre au texte de la page
@@ -118,7 +110,7 @@ function removeLetter(phraseIndex) {
             clearInterval(interval);
             changePhrase();
         }
-    }, 100);
+    }, 85);
 }
 
 //fonction permettant de lancer les fonctions addLetter et removeLetter

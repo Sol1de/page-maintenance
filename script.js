@@ -92,7 +92,9 @@ function addLetter(phraseIndex) {
         
         else {
             clearInterval(interval);
-            removeLetter(phraseIndex);
+            setTimeout(() => {
+                removeLetter(phraseIndex);
+            }, 1000);
         }
     }, 100);
 }

@@ -12,6 +12,10 @@
     font-family: "Poppins", sans-serif;
 }
 
+.body {
+    background-color: #F9F8F7;
+}
+
 main {
     height: 100dvh;
     width: 100%;
@@ -24,7 +28,7 @@ main {
 .agence {
     display: flex;
     position: absolute;
-    top: 20%;
+    top: 10%;
 }
 
 .agence-title {
@@ -68,7 +72,7 @@ main {
 }
 
 .contact-container {
-    bottom: 20%;
+    bottom: 10%;
     display: flex;
     position: absolute;
     width: 100%;
@@ -83,7 +87,6 @@ main {
     font-size: 16px;
     transition: all 0.5s ease;
     border-bottom: 1px solid #adb5bd00;
-    margin-top: 20px;
 }
 
 .contact:hover {
@@ -92,7 +95,7 @@ main {
 }   
 
 .animation-blink {
-    animation: cursorBlink 1s infinite;
+    animation: cursorBlink 0.7s infinite;
 }
 
 .appear-animation {
@@ -110,20 +113,20 @@ main {
     to { opacity: 1; }
 }
 
+/* responsive largeur */
 @media screen and (max-width: 768px){
     main {
         padding-inline: 10px;
     }
 
     .agence {
-        top: 10%;
-        font-size: 19px;
+        top: 5%;
     }
 
     .container {
         flex-direction: column;
         align-items: center;
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .container-we {
@@ -133,5 +136,39 @@ main {
 
     .cursor  {
         display: none;
+    }
+}
+
+/* responsive hauteur */
+@media screen and (max-height: 450px){
+    main {
+        padding-inline: 10px;
+    }
+
+    .agence {
+        top: 5%;
+        display: flex;
+    }
+
+    .agence-title {
+        font-size: 15px;
+    }
+
+    .container {
+        flex-direction: row;
+        align-items: center;
+        font-size: 18px;
+    }
+
+    .container-we {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .cursor  {
+        display: flex;
+        height: 34px;
+        font-size: 38px;
+        padding-inline: 6px;
     }
 }

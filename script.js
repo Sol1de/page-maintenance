@@ -2,54 +2,40 @@
 const phrase = document.querySelector(".container-texte")
 const cursor = document.querySelector(".cursor")
 const liste = [
-    `ARE CREATING LUXURY.`,
-    `DEFINE ELEGANCE.`,
-    `SHAPE EXCLUSIVITY.`,
-    `DESIGN TIMELESS PRODUCTS.`,
-    `INNOVATE WITH STYLE.`,
-    `CRAFT LUXURIOUS DREAMS.`,
-    `EMBODY SOPHISTICATION.`,
-    `BUILD LUXE VISIONS.`,
-    `LOVE WHAT WE DO.`,
-    `DESIGN WITH LOVE.`,
-    `CRAFT ELEGANCE.`,
-    `LOVE DESIGN.`,
-    `DESIGN WITH LOVE.`,
-    `LOVE STYLE.`,
-    `DESIGN.`,
-    `CRAFT LOVE.`,
-    `ARE THE LOVE BEHIND DESIGN.`,
-    `CRAFT, BUILD, ANTICIPATE.`,
-    `DESIGN WHILE YOU WAIT.`,
-    `BUILD, DESIGN, REVEAL NEXT.`,
-    `ARE LAUNCHING SOON.`,
-    `EMBRACE BEAUTY.`,
-    `CHERISH HUMANITY.`,
-    `HONOR CRAFTSMEN.`,
-    `REBIRTH.`,
-    `LOVE ELEGANCE.`,
-    `CONNECT WITH HUMANITY.`,
-    `SUPPORT CRAFTSMEN.`,
-    `CRAFT BEAUTY.`,
-    `SHAPE ELEGANT OBJECTS.`,
-    `THINK WITH KINDNESS.`,
-    `DESIGN BEAUTIFUL THOUGHTS.`,
-    `CHERISH OBJECTS OF GRACE.`,
-    `CREATE BEAUTIFUL IDEAS.`,
-    `FOSTER OBJECTS OF JOY.`,
-    `NOURISH THOUGHTFUL DESIGN.`,
-    `SCULPT BEAUTY WITH CARE.`,
-    `INSPIRE THROUGH OBJECTS.`,
-    `DESIGN WITH PASSION.`,
-    `EMBRACE ELEGANCE.`,
-    `CRAFT DESIRABLE OBJECTS.`,
-    `LOVE ART.`,
-    `FUSE PASSION INTO DESIGN.`,
-    `ELEVATE ELEGANCE.`,
-    `CREATE IRRESISTIBLE DESIGN.`,
-    `DESIGN WITH DESIRABILITY.`,
-    `CRAFT LUXURIOUS JOURNEYS FOR ALL.`,
-    `SHAPE LUXURIOUS DREAMS INTO REALITY.`
+    "ARE DESIGNERS.",
+    "ARE CRAFTSMEN.",
+    "ARE ARTISTS.",
+    "ARE CREATIVES.",
+    "DESIGN WITH LOVE.",
+    "DESIGN WITH PASSION.",
+    "CRAFT UNIQUENESS.",
+    "DESIGN OBJECTS.",
+    "CREATE DESIRE.",
+    "DESIGN FURNITURE.",
+    "CRAFT BEAUTY.",
+    "CREATE LIGHTING.",
+    "CRAFT INTERIORS.",
+    "THINK AND DESIGN PRODUCTS.",
+    "CAREFULLY CRAFT EXCELLENCE.",
+    "FUSE PASSION AND DESIGN.",
+    "FUSE TECH AND LIFESTYLE.",
+    "PLAY WITH TRADITION.",
+    "EMBRACE MODERNITY.",
+    "CRAFT LUXURIOUS DREAMS.",
+    "LOVE MAKING.",
+    "CRAFT MATERIALS.",
+    "HONOR CRAFTSMANSHIP.",
+    "SHAPE EVERY DETAIL WITH LOVE.",
+    "CREATE UNIQUE EXPERIENCES.",
+    "ARE CURIOUS.",
+    "LOVE ART.",
+    "CRAFT DESIRABILITY.",
+    "CRAFT INTERIOR MASTERPIECES.",
+    "SHAPE UNIQUE ACCESSORIES.",
+    "TRANSFORM SPACES WITH DESIGN.",
+    "CURATE BEAUTY IN EVERY DETAIL.",
+    "EMBRACE BRAND IDENTITY.",
+    "DESIGN STORIES.",
 ]
 
 //fonction retournant un element d'une liste a partir de son index
@@ -72,6 +58,7 @@ function addLetter(phraseIndex) {
     let texte = getPhrase(phraseIndex).split("");
     length = texte.length;
     let i = 0;
+    cursor.classList.add('animation-blink');
 
     let interval = setInterval(() => {
         
@@ -85,11 +72,11 @@ function addLetter(phraseIndex) {
         
         else {
             clearInterval(interval);
-            cursor.classList.add('animation-blink');
+            
 
             setTimeout(() => {
                 removeLetter(phraseIndex);
-            }, 2000);
+            }, 200);
         }
     }, 85);
 }
@@ -98,7 +85,6 @@ function addLetter(phraseIndex) {
 function removeLetter(phraseIndex) {
     let texte = getPhrase(phraseIndex);
     let i = texte.length;
-    cursor.classList.remove('animation-blink');
 
     let interval = setInterval(() => {
         if (i > 0) {

@@ -111,6 +111,27 @@ function changePhrase() {
     }
 }
 
+//fonction permettant d'afficher le contact
+function showContact() {
+    const contact = document.querySelector('.contact')
+    const container = document.querySelector('.contact-container')
+    contact.style.opacity = '0'
+
+    setTimeout(() => {
+        container.innerHTML = `
+            <p style="opacity: 0; transition: all 0.5s ease; font-weight: 300;">Example.mail@gmail.com</p>
+            <p style="opacity: 0; transition: all 0.5s ease; font-weight: 300;">06 00 00 00 00</p>
+        `
+        container.style.flexDirection = 'column'
+        container.style.alignItems = 'center'
+    }, 500)
+
+    setTimeout(() => {
+        container.firstElementChild.style.opacity = '1'
+        container.lastElementChild.style.opacity = '1'
+    }, 550)
+}
+
 //on lance les fonction une fois que les éléments de la page sont chargés
 document.addEventListener("DOMContentLoaded", function () {
     changePhrase();

@@ -118,12 +118,12 @@ function showContact() {
         container.innerHTML = `
             <a href="mailto:studio@pierrefavresse.com" style="opacity: 0; transition: all 0.5s ease; font-weight: 300; color: #495057;">studio@pierrefavresse.com</a>
         `
-    }, 500)
+    }, 200)
 
     setTimeout(() => {
         container.firstElementChild.style.opacity = '1'
         container.lastElementChild.style.opacity = '1'
-    }, 550)
+    }, 300)
 }
 
 //on lance les fonction une fois que les éléments de la page sont chargés

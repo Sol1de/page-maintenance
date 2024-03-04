@@ -25,15 +25,12 @@ const liste = [
     "LOVE MAKING.",
     "CRAFT MATERIALS.",
     "HONOR CRAFTSMANSHIP.",
-    "SHAPE EVERY DETAIL WITH LOVE.",
     "CREATE UNIQUE EXPERIENCES.",
     "ARE CURIOUS.",
     "LOVE ART.",
     "CRAFT DESIRABILITY.",
     "CRAFT INTERIOR MASTERPIECES.",
     "SHAPE UNIQUE ACCESSORIES.",
-    "TRANSFORM SPACES WITH DESIGN.",
-    "CURATE BEAUTY IN EVERY DETAIL.",
     "EMBRACE BRAND IDENTITY.",
     "DESIGN STORIES.",
 ]
@@ -119,11 +116,8 @@ function showContact() {
 
     setTimeout(() => {
         container.innerHTML = `
-            <p style="opacity: 0; transition: all 0.5s ease; font-weight: 300;">Example.mail@gmail.com</p>
-            <p style="opacity: 0; transition: all 0.5s ease; font-weight: 300;">06 00 00 00 00</p>
+            <a href="mailto:studio@pierrefavresse.com" style="opacity: 0; transition: all 0.5s ease; font-weight: 300; color: #495057;">studio@pierrefavresse.com</a>
         `
-        container.style.flexDirection = 'column'
-        container.style.alignItems = 'center'
     }, 500)
 
     setTimeout(() => {
